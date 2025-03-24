@@ -20,3 +20,19 @@ export const TASKS_PRIORITY = [
     label: 'Urgent',
   }
 ]
+
+export const customModalStyles = {
+  content: {
+    top: '40%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    padding: 0
+  },
+  overlay: {
+    backgroundColor: '#06102365',
+    zIndex: 120
+  },
+};

@@ -4,6 +4,9 @@ import {
 import ErrorBoundary from "./components/Shared/ErrorBoundary";;
 import AppRoutes from "./routes";
 import AppProviders from "./providers";
+import Modal from 'react-modal';
+
+Modal.setAppElement('#root');
 
 function App() {
 

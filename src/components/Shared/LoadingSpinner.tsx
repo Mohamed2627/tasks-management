@@ -7,7 +7,7 @@ interface ILoadingSpinnerProps {
 
 const LoadingSpinner = ({ className, wrapperStyle }: ILoadingSpinnerProps) => {
   return (
-    <div className={cn("grid min-h-[60px] w-full place-items-center rounded-lg p-6 lg:overflow-visible", wrapperStyle)}>
+    <div className={cn("grid w-full place-items-center rounded-lg lg:overflow-visible", wrapperStyle)}>
       <svg className={cn("w-12 h-12 animate-spin text-gray-500 dark:text-white", className)} viewBox="0 0 64 64" fill="none"
         xmlns="http://www.w3.org/2000/svg" width="24" height="24">
         <path

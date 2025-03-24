@@ -69,3 +69,14 @@ export const getTaskStatus = async (): Promise<ITaskStatus[]> => {
     throw new Error("Failed to get task status");
   }
 }
+
+export const addNewTask = async (status: ITaskStatus): Promise<ITaskStatus> => {
+  try {
+    await delay(1000);
+    const newStatus = await axiosInstance.post(`/status`, status);
+    return newStatus.data
+  } catch (error) {
+    console.log(error);
+    throw new Error("Failed to create task status");
+  }
+}

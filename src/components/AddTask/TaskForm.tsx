@@ -16,6 +16,7 @@ import LoadingSpinner from '../Shared/LoadingSpinner';
 import { format } from "date-fns"
 import { useUpdateTask } from '../../hooks/useUpdateTask';
 import { useEffect } from "react";
+import AddNewStatus from "./AddNewStatus";
 
 const TaskForm = () => {
 
@@ -110,12 +111,14 @@ const TaskForm = () => {
         name={TASK_FIELDS.PRIORITY}
         options={TASKS_PRIORITY}
       />
-
-      <ControlledSelectInput
-        control={control}
-        name={TASK_FIELDS.STATUS}
-        options={taskStatus}
-      />
+      <div className="flex flex-row items-center justify-start gap-x-4 sm:gap-x-36">
+        <ControlledSelectInput
+          control={control}
+          name={TASK_FIELDS.STATUS}
+          options={taskStatus}
+        />
+        <AddNewStatus />
+      </div>
       <CustomButton
         onClick={handleSubmit(onSubmit)}
         disabled={isCreatingTask || isUpdatingTask}
