@@ -1,3 +1,35 @@
+# Tasks Management Application
+
+## Project Overview
+A task management application built with modern web technologies, utilizing JSON Server for backend simulation.
+
+## Prerequisites
+- Node.js
+- npm (Node Package Manager)
+
+## Installation Steps
+
+### 1. Clone the Repository
+```bash
+git clone git@github.com:Mohamed2627/tasks-management.git
+
+2. Navigate to Project Directory
+cd tasks-management
+
+3. Install Dependencies
+npm install
+
+Running the Application
+
+Start JSON Server (Backend Simulation)
+npm run server
+
+Server will run on port 4000
+Simulates backend API endpoints
+
+Start Development Server
+npm run dev
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
