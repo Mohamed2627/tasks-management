@@ -4,7 +4,7 @@ import { ITask, ITaskStatus } from "../models/task";
 import { delay } from "../utils";
 
 
-export const createTask = async (task: ITask): Promise<ITaskStatus> => {
+export const createTask = async (task: ITask): Promise<ITask> => {
   try {
     await delay(1000);
     const createdTask = await axiosInstance.post('/tasks', task)
@@ -15,14 +15,25 @@ export const createTask = async (task: ITask): Promise<ITaskStatus> => {
   }
 }
 
-export const updateTask = async (task: ITask): Promise<ITaskStatus> => {
+export const updateTask = async (task: ITask): Promise<ITask> => {
   try {
-    await delay(500);
+    await delay(1000);
     const updatedTask = await axiosInstance.put(`/tasks/${task[TASK_FIELDS.ID]}`, task)
     return updatedTask.data
   } catch (error) {
     console.log(error);
     throw new Error("Failed to update task")
+  }
+}
+
+export const updateTaskStatus = async (taskId: string, newStatus: { [TASK_FIELDS.STATUS]: string }): Promise<ITask> => {
+  try {
+    await delay(500);
+    const updatedTaskStatus = await axiosInstance.patch(`/tasks/${taskId}`, newStatus)
+    return updatedTaskStatus.data
+  } catch (error) {
+    console.log(error);
+    throw new Error("Failed to update task status")
   }
 }
 

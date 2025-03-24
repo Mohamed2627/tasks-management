@@ -19,12 +19,14 @@ import { useEffect } from "react";
 
 const TaskForm = () => {
 
+  // Hooks------------------------------------------
   const { taskId } = useParams();
   const { taskDetails } = useGetTaskDetails();
   const { taskStatus } = useGetStatus();
   const { createTask, isCreatingTask } = useCreateTask();
   const { updateTask, isUpdatingTask } = useUpdateTask()
 
+  // React Hook Form--------------------------------
   const defaultValues = () => {
     if (taskId && taskDetails) {
       return {
@@ -54,7 +56,7 @@ const TaskForm = () => {
 
   const { reset, handleSubmit, watch, control } = form;
 
-
+  //Functions--------------------------------------- 
   const onSubmit = (values: ITask) => {
     console.log(values);
 
@@ -74,6 +76,7 @@ const TaskForm = () => {
     }
   }
 
+  // Effects----------------------------------------
   useEffect(() => {
     if (taskId && taskDetails) {
       reset({ ...defaultValues() });

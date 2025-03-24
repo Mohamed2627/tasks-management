@@ -5,8 +5,8 @@
       "title": "uuuuuu",
       "description": "jgkyviy",
       "dueDate": "2025-03-24T22:27:00.000Z",
-      "priority": "2",
-      "status": "to-do"
+      "status": "in-progress",
+      "priority": "2"
     },
     {
       "id": "fb092dc1-c3b0-429e-89e6-eef22dff1bc2",
@@ -30,7 +30,7 @@
       "description": "uyfiytfi",
       "dueDate": "2025-03-25T00:58:00.000Z",
       "priority": "2",
-      "status": "to-do"
+      "status": "in-progress"
     },
     {
       "id": "72a79164-d037-4c78-a2d1-a89e977aab52",

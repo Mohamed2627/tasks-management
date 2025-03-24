@@ -7,6 +7,7 @@ import { StyledSelectInput } from '../components/Form/StyledSelectInput';
 import { TASK_FIELDS } from '../enum/task';
 import { TASKS_PRIORITY } from '../constants';
 import TaskStatusColumn from '../components/Tasks/TaskStatusColumn';
+import { ITask } from '../models/task';
 
 const Tasks = () => {
 
@@ -21,6 +22,7 @@ const Tasks = () => {
     filterStatus: '',
     filterPriority: '',
   });
+  const [activeTask, setActiveTask] = useState<ITask | null>(null);
 
   // Functions--------------------------------------
   const handleFiltersChange = (field: string, value: string) => {
@@ -55,7 +57,6 @@ const Tasks = () => {
     setSearchParams(newSearchParams);
   }, [filters, searchParams, setSearchParams]);
 
-
   return (
     <div className='flex flex-col items-center'>
       <StyledInput
@@ -89,11 +90,12 @@ const Tasks = () => {
               tasks={tasks.filter(
                 (task) => task[TASK_FIELDS.STATUS] === status.value
               )}
+              setActiveTask={setActiveTask}
+              activeTask={activeTask}
             />
           ))}
         </div>
       </div>
-
     </div>
   )
 }
