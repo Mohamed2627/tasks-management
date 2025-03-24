@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --primary-color: #10B981;
+  --white: #FFFFFF;
+  --dark-background: #101828;
+  --light-background: #FFFFFF;
+  --black: #000000;
+  --error-color: #fe3131
+}
+
+@theme {
+  --color-primary: var(--primary-color);
+  --color-darkBackground: #101828;
+  --color-error: var(--error-color);
+}
+
+html {
+  @apply transition-colors duration-300;
+}
+
+body {
+  @apply bg-[var(--light-background)] dark:bg-[var(--dark-background)] text-[var(--black)] dark:text-[var(--white)];
+  @apply transition-colors duration-300
+}
+
+.paddingX {
+  @apply px-2 sm:px-4 md:px-8;
+}
+
+.paddingY {
+  @apply py-1 sm:py-4 md:py-6;
+}
+
+.active {
+  @apply bg-[var(--dark-background)] dark:bg-[var(--light-background)] text-[var(--white)] dark:text-[var(--black)];
+}
+
+.active:hover {
+  @apply bg-[var(--dark-background)] dark:bg-[var(--light-background)] text-[var(--white)] dark:text-[var(--black)];
+}
+
+.border-color {
+  @apply border-gray-700 dark:border-gray-300;
+}
+
+.background-theme {
+  @apply bg-[var(--light-background)] dark:bg-[var(--dark-background)];
+}
+
+
+/* Custom scrollbar styles */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* For vertical scrollbars in TaskStatusColumn */
+.custom-scrollbar-vertical::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar-vertical::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 4px;
+}
+
+.custom-scrollbar-vertical::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+
+.custom-scrollbar-vertical::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Firefox support */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+.custom-scrollbar-vertical {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
